@@ -1,0 +1,12 @@
+/*
+    Styles for PokeGrid Component
+*/
+
+.pokeblock {
+    border: solid black 0.125rem;
+    height: 6.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(15, 109, 197);
+}

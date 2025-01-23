@@ -1,6 +1,8 @@
+import '../styles/pokegrid.css';
 import { Grid2 } from '@mui/material';
 import { PokeBlock } from './Pokeblock.js';
 import {useState, useEffect, useCallback} from 'react';
+import { getPokemons } from '../api/pokeAPI.js';
 
 //Get list of all pokemon here
 
@@ -11,48 +13,35 @@ import {useState, useEffect, useCallback} from 'react';
 //Need to take the url provided for each result to get more data on the pokemon to use
     //https://pokeapi.co/api/v2/pokemon/NUMBER/" - has sprites and type and generation (used for front end ui)
 
-export function PokeGrid() {
+export function PokeGrid({filter}) {
 
     const [pokemons,setPokemons] = useState([]);
 
-    async function getPokemons() {
-
-        //First get count of all Pokemon to get all the pokemon in our call
-
-        const domain = "https://pokeapi.co/";
-        const endpoint = "api/v2/pokemon/";
-        const limitCount = "?limit=1"
-
-        const urlCount = domain + endpoint + limitCount;
-
-        const responseCount = await fetch(urlCount);
-        const jsonCount = await responseCount.json();
-        
-        const pokemonCount = jsonCount.count;
-
-        //Use pokemon count in limit for next call
-
-        const limitAll = `?limit=${pokemonCount}`;
-        const urlAll = domain + endpoint + limitAll;
-
-        const responseAll = await fetch(urlAll);
-        const jsonAll = await responseAll.json();
-
-        setPokemons(jsonAll.results);
-
-    }
-
     useEffect(() => {
-        getPokemons();
+        getPokemons().then((json) => {
+            setPokemons(json.results.map((p) => p.name));   //Just getting an array of all pokemon names
+        });
     },[]);
 
     console.log(pokemons);
 
+    //displayPokemon is a filtered pokemons array used for displaying what is filtered on w/o removing what we had
+
+    let displayPokemon;
+
+    if(filter !== "") {
+        displayPokemon = pokemons.filter((pokemon,i) => {
+            return pokemon.includes(filter.toLowerCase()) || i + 1 === Number(filter);
+        })
+    } else {
+        displayPokemon = pokemons;
+    }
+
     return  <Grid2 container rowSpacing = {1} columnSpacing = {1} justifyContent= 'center' alignItems = 'center'>
                 {
-                    pokemons.map((p,i) => {
-                        return  <Grid2 size = {2} index ={i}>
-                                    <PokeBlock pokemon = {p}></PokeBlock>
+                    displayPokemon.map((p,i) => {
+                        return  <Grid2 className = "pokeblock" size = {2} index ={i}>
+                                    <PokeBlock pokemon = {p} number = {pokemons.indexOf(p) + 1} ></PokeBlock>
                                 </Grid2>
                     })
                 }

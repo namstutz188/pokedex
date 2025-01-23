@@ -1,0 +1,14 @@
+/*
+    PokeSearch component styling
+*/
+
+.searchbar {
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    margin: 1rem 0; 
+}
+
+.textfieldsearch {
+    width: 25vw;
+}

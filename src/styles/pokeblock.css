@@ -1,0 +1,17 @@
+/*
+    Pokeblock styling
+*/
+
+.number {
+    position: absolute;
+    color: rgba(211, 207, 207, 0.15);
+    font-size: 4rem;
+
+}
+
+.name {
+    position: absolute;
+    z-index: 100;
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+}
