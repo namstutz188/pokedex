@@ -12,9 +12,14 @@ export async function getPokemons() {
 
     //Use pokemon count in limit for next call
 
+    //TEMP: Only pull back 151 while testing
+
+    /*
     const limitAll = `?limit=${pokemonCount}`;
     const urlAll = domain + endpoint + limitAll;
-
+    */
+    const limitTemp = '?limit=151';
+    const urlAll = domain + endpoint + limitTemp;
     const responseAll = await fetch(urlAll);
     const jsonAll = await responseAll.json();
 

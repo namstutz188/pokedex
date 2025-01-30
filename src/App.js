@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
 import'./components/Pokegrid.js'
 import {useState} from 'react';
 import { PokeGrid } from './components/Pokegrid.js';
@@ -13,7 +12,8 @@ import { PokeSearch } from './components/PokeSearch.js';
     //SearBar
     //Tabs
     //Pokemon block area (some sort of CSS grid kinda thing)
-      //A single pokemon block - background dependent on primary type data
+      //A single pokemon block
+        //onClick pops up with a new component - TODO
 
 function App() {
 
