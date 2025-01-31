@@ -25,3 +25,16 @@ export async function getPokemons() {
 
     return jsonAll;
 }
+
+//Get specific Pokemon Data
+
+export async function getPokemonData(pokemon) {
+    const domain = "https://pokeapi.co/";
+    const endpoint = "api/v2/pokemon/";
+
+    const url = domain + endpoint + pokemon;
+
+    const response = await fetch(url);
+    const json = await response.json();
+    return json;
+}

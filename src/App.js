@@ -1,8 +1,8 @@
 import './styles/App.css';
 import'./components/Pokegrid.js'
 import {useState} from 'react';
-import { PokeGrid } from './components/Pokegrid.js';
-import { PokeSearch } from './components/PokeSearch.js';
+import PokeGrid from './components/Pokegrid.js';
+import PokeSearch from './components/PokeSearch.js';
 
 //For now just going to not use React Router
 

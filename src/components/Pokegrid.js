@@ -1,6 +1,6 @@
 import '../styles/pokegrid.css';
 import { Grid2 } from '@mui/material';
-import { PokeBlock } from './Pokeblock.js';
+import PokeBlock from './Pokeblock.js';
 import {useState, useEffect, useCallback} from 'react';
 import { getPokemons } from '../api/pokeAPI.js';
 
@@ -9,7 +9,7 @@ import { getPokemons } from '../api/pokeAPI.js';
 //Need to take the url provided for each result to get more data on the pokemon to use
     //https://pokeapi.co/api/v2/pokemon/NUMBER/" - has sprites and type and generation (used for front end ui) (maybe too many calls -)
 
-export function PokeGrid({filter}) {
+export default function PokeGrid({filter}) {
 
     const [pokemons,setPokemons] = useState([]);
 
