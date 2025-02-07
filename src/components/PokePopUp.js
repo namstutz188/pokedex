@@ -10,6 +10,9 @@ export default function PokePopUp({pokemon, number}) {
 
     //Instead of keeping everything, just keep what I want like doing for the front sprite and back sprite
 
+    //Get data and pass into a Table or a List compoenent from Material UI
+    //Create a new component of mine to put all of this in its own file - do next time but try and use Material UI stuff
+
     useEffect(() => {
         getPokemonData(pokemon).then((json) => {
             setPokemonData({
