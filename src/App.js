@@ -3,6 +3,7 @@ import'./components/Pokegrid.js'
 import {useState} from 'react';
 import PokeGrid from './components/Pokegrid.js';
 import PokeSearch from './components/PokeSearch.js';
+import PokeSiteHeader from './components/PokeSiteHeader.js';
 
 //For now just going to not use React Router
 
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+      <PokeSiteHeader />
       <PokeSearch criteria = {searchCriteria} setSearch = {setSearchCriteria}></PokeSearch>
       <PokeGrid filter = {searchCriteria}></PokeGrid>
     </div>

@@ -5,6 +5,7 @@ import { Grid2 } from '@mui/material';
 import PokePopUpSprite from './PokePopUpSprite';
 import PokePopUpHeader from './PokePopUpHeader';
 import PokePopUpTable from './PokePopUpTable';
+import parseData from '../data/parseData';
 
 export default function PokePopUp({pokemon, number}) {
 
@@ -20,23 +21,11 @@ export default function PokePopUp({pokemon, number}) {
     useEffect(() => {
         getPokemonData(pokemon).then((json) => {
 
-            //Capture data (put in own function eventually in own file and import in)
-
             const pokemonData = [];
-            //Height Property
-            pokemonData.push({key: 'Height', value: json.height});
-            //Weight
-            pokemonData.push({key: 'Weight', value: json.weight});
-            //Type One
-            const typeOneName = json.types[0].type.name
-            const typeOneFormat = typeOneName.charAt(0).toUpperCase() + typeOneName.slice(1)
-            pokemonData.push({key: 'Type 1', value: typeOneFormat});
-            //Type Two - if Exists
-            if(json.types.length > 1) {
-                const typeTwoName = json.types[1].type.name
-                const typeTwoFormat = typeTwoName.charAt(0).toUpperCase() + typeTwoName.slice(1)
-                pokemonData.push({key: 'Type 2', value: typeTwoFormat});
-            }
+
+            //Parses data. Retrieves heigh, weight, and types currently
+
+            parseData(pokemonData, json);
 
             setPokemonData(pokemonData);
             setPokemonFrontSprite(json.sprites.front_default);
