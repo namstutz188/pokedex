@@ -1,6 +1,6 @@
 import '../styles/pokeblock.css';
-import {Box, Modal, Container} from '@mui/material';
-import {useState, useEffect, useCallback} from 'react';
+import {Modal, Container} from '@mui/material';
+import {useState} from 'react';
 import PokePopUp from './PokePopUp';
 
 export default function PokeBlock({pokemon, number}) {

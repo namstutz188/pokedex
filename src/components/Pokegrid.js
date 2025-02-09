@@ -1,7 +1,7 @@
 import '../styles/pokegrid.css';
 import { Grid2 } from '@mui/material';
 import PokeBlock from './Pokeblock.js';
-import {useState, useEffect, useCallback} from 'react';
+import {useState, useEffect} from 'react';
 import { getPokemons } from '../api/pokeAPI.js';
 
 //Retrieve Pokemon https://pokeapi.co/api/v2/{endpoint}/?limit=xx&offset=XX

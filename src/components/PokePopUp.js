@@ -31,7 +31,7 @@ export default function PokePopUp({pokemon, number}) {
             setPokemonFrontSprite(json.sprites.front_default);
             setPokemonBackSprite(json.sprites.back_default);
         })
-    },[]);
+    },[pokemon]);
 
     const boxStyle = {
         position: 'fixed',

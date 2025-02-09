@@ -8,7 +8,7 @@ export async function getPokemons() {
     const responseCount = await fetch(urlCount);
     const jsonCount = await responseCount.json();
         
-    const pokemonCount = jsonCount.count;
+    //const pokemonCount = jsonCount.count;
 
     //Use pokemon count in limit for next call
 
