@@ -24,8 +24,6 @@ export default function PokeGrid({filter}) {
         });
     },[]);
 
-    console.log(pokemons);
-
     //displayPokemon is a filtered pokemons array used for displaying what is filtered on w/o removing what we had
 
     let displayPokemon;

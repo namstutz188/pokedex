@@ -1,10 +1,14 @@
 import {useState, useEffect} from 'react';
 import { getPokemonData } from '../api/pokeAPI';
 import { Box } from '@mui/system';
+import { Grid2 } from '@mui/material';
+import PokePopUpSprite from './PokePopUpSprite';
+import PokePopUpHeader from './PokePopUpHeader';
+import PokePopUpTable from './PokePopUpTable';
 
 export default function PokePopUp({pokemon, number}) {
 
-    const [pokemonData, setPokemonData] = useState({});
+    const [pokemonData, setPokemonData] = useState([]);
     const [pokemonFrontSprite, setPokemonFrontSprite] = useState('');
     const [pokemonBackSprite, setPokemonBackSprite] = useState('');
 
@@ -15,26 +19,37 @@ export default function PokePopUp({pokemon, number}) {
 
     useEffect(() => {
         getPokemonData(pokemon).then((json) => {
-            setPokemonData({
-                height: json.height,
-                weight: json.weight,
-                sprites: json.sprites,
-                types: json.types,
-                stats: json.stats
-            });
+
+            //Capture data (put in own function eventually in own file and import in)
+
+            const pokemonData = [];
+            //Height Property
+            pokemonData.push({key: 'Height', value: json.height});
+            //Weight
+            pokemonData.push({key: 'Weight', value: json.weight});
+            //Type One
+            const typeOneName = json.types[0].type.name
+            const typeOneFormat = typeOneName.charAt(0).toUpperCase() + typeOneName.slice(1)
+            pokemonData.push({key: 'Type 1', value: typeOneFormat});
+            //Type Two - if Exists
+            if(json.types.length > 1) {
+                const typeTwoName = json.types[1].type.name
+                const typeTwoFormat = typeTwoName.charAt(0).toUpperCase() + typeTwoName.slice(1)
+                pokemonData.push({key: 'Type 2', value: typeTwoFormat});
+            }
+
+            setPokemonData(pokemonData);
             setPokemonFrontSprite(json.sprites.front_default);
             setPokemonBackSprite(json.sprites.back_default);
         })
     },[]);
 
-    //console.log(pokemonData);
-
     const boxStyle = {
-        position: 'absolute',
+        position: 'fixed',
         top: '50vh',
         left: '50vw',
         width: '25vw',
-        height: '25vh',
+
         transform: 'translate(-50%,-50%)',
         border: '3px solid #000',
         bgcolor: 'white',
@@ -43,25 +58,29 @@ export default function PokePopUp({pokemon, number}) {
         alignItems: 'center'
     };
 
+    const flexCenter = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+
     return  <Box sx= {boxStyle}>
-                {
-                    pokemonFrontSprite !== '' &&
-                    <Box
-                        component = 'img'
-                        alt = {`${pokemon} front image`}
-                        src = {pokemonFrontSprite}
-                    />
-                }
-                {
-                    pokemonBackSprite !== '' &&
-                    <Box
-                        component = 'img'
-                        alt = {`${pokemon} back image`} 
-                        src = {pokemonBackSprite}
-                    />
-                }
-                <div>
-                    {`#${number} - ${pokemon}`}
-                </div>
+
+                <Grid2 container spacing = {1} justifyContent = 'center' alignItems= 'center'>
+
+                    <Grid2 size = {12} sx = {flexCenter}>
+                        <PokePopUpSprite frontSprite = {pokemonFrontSprite} backSprite = {pokemonBackSprite} pokemon = {pokemon} />
+                    </Grid2>
+
+                    <Grid2 size = {12} sx = {flexCenter}>
+                        <PokePopUpHeader pokemon = {pokemon} pokeNumber = {number} />
+                    </Grid2>
+
+                    <Grid2 size = {12}>
+                        <PokePopUpTable data = {pokemonData} />
+                    </Grid2>
+
+                </Grid2>
+                    
             </Box>
 }
