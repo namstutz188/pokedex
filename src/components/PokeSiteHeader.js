@@ -24,7 +24,7 @@ export default function PokeSiteHeader() {
                     sx = {{height: '100%', width: 'auto'}}
                 />
                 <Paper sx = {paperStyle}>
-                    PokédexLite
+                    PokéLite
                 </Paper>
                 
             </Box>
