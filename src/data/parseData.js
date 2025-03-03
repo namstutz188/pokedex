@@ -7,7 +7,7 @@ export default function parseData(dataArray,dataObj) {
     dataArray.push({key: 'Height', value: heightValue});
     //Weight - in hectograms. Convert to kilograms
     const weightKilogram = dataObj.weight / 10;
-    const weightValue = weightKilogram != 1 ? weightKilogram + ' kilograms' : weightKilogram + ' kilogram';
+    const weightValue = weightKilogram !== 1 ? weightKilogram + ' kilograms' : weightKilogram + ' kilogram';
     dataArray.push({key: 'Weight', value: weightValue});
     //Type One
     const typeOneName = dataObj.types[0].type.name
