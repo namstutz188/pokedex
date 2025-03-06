@@ -1,4 +1,15 @@
+[data-theme='light'] {
+  --background-color: rgb(174,186,201);
+  --text-color: black;
+}
+
+[data-theme='dark'] {
+  --background-color: rgb(63, 63, 63);
+  --text-color: white;
+}
+
 body {
-  background-color: rgb(174, 186, 201);
+  background-color: var(--background-color);
   font-family: Arial;
+  color: var(--text-color);
 }

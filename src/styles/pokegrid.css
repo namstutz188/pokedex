@@ -2,6 +2,16 @@
     Styles for PokeGrid Component
 */
 
+[data-theme='light'] {
+    --background-color: rgb(174,186,201);
+    --text-color: black;
+  }
+  
+  [data-theme='dark'] {
+    --background-color: rgb(63, 63, 63);
+    --text-color: white;
+  }
+
 .pokeblock {
     border: solid black 0.125rem;
     height: 6.5rem;

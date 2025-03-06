@@ -2,9 +2,19 @@
     Pokeblock styling
 */
 
+[data-theme='light'] {
+    --number-color: rgba(211, 207, 207, 0.25);
+    --text-color: black;
+  }
+  
+  [data-theme='dark'] {
+    --number-color: rgba(211, 207, 207, 0.25);
+    --text-color: rgb(255, 255, 255);
+  }
+
 .number {
     position: absolute;
-    color: rgba(211, 207, 207, 0.15);
+    color: var(--number-color);
     font-size: 400%;
 
 }
@@ -13,5 +23,5 @@
     position: absolute;
     z-index: 100;
     font-size: 300%;
-    color: rgb(0, 0, 0);
+    color: var(--text-color);
 }

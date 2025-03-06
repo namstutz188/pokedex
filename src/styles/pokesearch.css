@@ -2,6 +2,14 @@
     PokeSearch component styling
 */
 
+[data-theme='light'] {
+  --text-color: black;
+}
+
+[data-theme='dark'] {
+  --text-color: white;
+}
+
 .searchbar {
     display:flex;
     justify-content: start;
@@ -11,4 +19,8 @@
 
 .textfieldsearch {
     width: 25vw;
+}
+
+#filled-search {
+    color: var(--text-color);
 }

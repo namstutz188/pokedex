@@ -5,6 +5,7 @@ import PokeGrid from './components/Pokegrid.js';
 import PokeSearch from './components/PokeSearch.js';
 import PokeSiteHeader from './components/PokeSiteHeader.js';
 
+
 //For now just going to not use React Router
 
 //Components we need: Want to use Material UI as much as possible
@@ -21,11 +22,11 @@ function App() {
   const [searchCriteria, setSearchCriteria] = useState('');
 
   return (
-    <div className="App">
-      <PokeSiteHeader />
-      <PokeSearch criteria = {searchCriteria} setSearch = {setSearchCriteria}></PokeSearch>
-      <PokeGrid filter = {searchCriteria}></PokeGrid>
-    </div>
+      <div className="App">
+        <PokeSiteHeader />
+        <PokeSearch criteria = {searchCriteria} setSearch = {setSearchCriteria}></PokeSearch>
+        <PokeGrid filter = {searchCriteria}></PokeGrid>
+      </div>
   );
 }
 

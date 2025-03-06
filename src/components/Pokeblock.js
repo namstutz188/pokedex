@@ -38,7 +38,7 @@ export default function PokeBlock({pokemon, number}) {
                     open = {open}
                     onClose = {handleClose}
                 >
-                    <PokePopUp pokemon = {pokemonName} number = {number} />  
+                    <PokePopUp pokemon = {pokemon} number = {number} />  
                 </Modal>
             </>
 }
