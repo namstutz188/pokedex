@@ -1,0 +1,31 @@
+.pokelogo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 6rem;
+}
+
+.pokelite {
+    padding: 0.25rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.darkModeButtonBox {
+    display:flex;
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
+    .pokelogo {
+        height: 3rem;
+    }
+
+    .pokelite {
+        font-size: 2rem;
+    }
+
+    .darkModeLabel {
+        font-size: 1rem;
+    }
+}

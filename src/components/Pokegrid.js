@@ -39,7 +39,7 @@ export default function PokeGrid({filter}) {
     return  <Grid2 container rowSpacing = {1} columnSpacing = {1} justifyContent= 'center' alignItems = 'center'>
                 {
                     displayPokemon.map((p,i) => {
-                        return  <Grid2 className = "pokeblock" size = {2} index ={i}>
+                        return  <Grid2 className = "pokeblock" size = {{xs: 6,md: 2}} index ={i}>
                                     <PokeBlock pokemon = {p.name} number = {p.id} ></PokeBlock>
                                 </Grid2>
                     })

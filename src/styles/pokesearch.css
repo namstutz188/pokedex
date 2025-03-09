@@ -24,3 +24,9 @@
 #filled-search {
     color: var(--text-color);
 }
+
+@media only screen and (max-width: 600px) {
+    .textfieldsearch {
+        width: 95vw;
+    }
+}

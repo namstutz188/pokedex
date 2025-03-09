@@ -1,0 +1,15 @@
+/*
+    Pop Up Table Styles
+*/
+
+[data-theme='light'] {
+    --text-color: black;
+  }
+  
+[data-theme='dark'] {
+    --text-color: rgb(255, 255, 255);
+  }
+
+.MuiTableCell-root.popuptablecell {
+    color: var(--text-color);
+}

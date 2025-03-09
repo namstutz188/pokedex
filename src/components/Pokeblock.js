@@ -28,7 +28,7 @@ export default function PokeBlock({pokemon, number}) {
                     onClick = {handleOpen}
                 >
                     <div className = "number">
-                        {'# ' + number}
+                        {number}
                     </div>
                     <div className = "name">
                         {pokemonName}

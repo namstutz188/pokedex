@@ -1,3 +1,4 @@
+import '../styles/pokepopup.css';
 import {useState, useEffect} from 'react';
 import { getPokemonData } from '../api/pokeAPI';
 import { Box } from '@mui/system';
@@ -33,27 +34,13 @@ export default function PokePopUp({pokemon, number}) {
         })
     },[pokemon]);
 
-    const boxStyle = {
-        position: 'fixed',
-        top: '50vh',
-        left: '50vw',
-        width: '25vw',
-
-        transform: 'translate(-50%,-50%)',
-        border: '3px solid #000',
-        bgcolor: 'white',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    };
-
     const flexCenter = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
     }
 
-    return  <Box sx= {boxStyle}>
+    return  <Box className = 'popupbox'>
 
                 <Grid2 container spacing = {1} justifyContent = 'center' alignItems= 'center'>
 

@@ -1,5 +1,5 @@
 import {TableRow, TableCell } from "@mui/material";
- 
+import '../styles/pokepopuptable.css'; 
 /*
     
     Structure of data prop should be
@@ -20,10 +20,10 @@ export default function PokePopUpTableData({data}) {
                 { 
                     data.map((dp) => {
                         return  <TableRow>
-                                    <TableCell>
+                                    <TableCell className = 'popuptablecell'>
                                         {dp.key}
                                     </TableCell>
-                                    <TableCell>
+                                    <TableCell className = 'popuptablecell'>
                                         {dp.value}
                                     </TableCell>
                                 </TableRow>

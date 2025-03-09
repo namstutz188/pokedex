@@ -1,3 +1,4 @@
+import '../styles/pokepopuptable.css';
 import { Table, TableHead, TableBody, TableRow, TableCell } from "@mui/material";
 import PokePopUpTableData from "./PokePopUpTableData";
 
@@ -6,7 +7,7 @@ export default function PokePopUpTable({data}) {
     return  <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>
+                        <TableCell className = 'popuptablecell'>
                             Pokémon Statistics
                         </TableCell>
                         <TableCell>
