@@ -4,7 +4,7 @@
 
 PokéLite is a front-end web application that utilizes HTML, CSS, and JavaScript in a React framework.
 The web page displays the first 151 Pokémon with a few key data points.
-The data is taken from [PokéAPI](https://pokeapi.co/)
+The data is taken from [PokéAPI](https://pokeapi.co/).
 
 The web app is hosted at: [https://pokelite.netlify.app/](https://pokelite.netlify.app/)
 
@@ -21,7 +21,7 @@ From the repository you wish to clone the pokedex repo into and install dependen
 
 To run the web page locally run: `npm start`
 
-This will run the app locally at: [http://localhost:3000](http://localhost:3000).
+This will run the app locally at: [http://localhost:3000](http://localhost:3000)
 
 ## Key Features
 
