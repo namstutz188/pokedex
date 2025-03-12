@@ -21,7 +21,7 @@ From the repository you wish to clone the pokedex repo into and install dependen
 
 To run the web page locally run: `npm start`
 
-This will run the app locally at: [http://localhost:3000](htpp://localhost:3000).
+This will run the app locally at: [http://localhost:3000](http://localhost:3000).
 
 ## Key Features
 
