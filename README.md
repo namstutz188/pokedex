@@ -12,17 +12,14 @@ The web app is hosted at: [https://pokelite.netlify.app/](https://pokelite.netli
 
 From the repository you wish to clone the pokedex repo into and install dependencies run:
 
-    - `git clone https://github.com/namstutz188/pokedex`
+    `git clone https://github.com/namstutz188/pokedex`
+    `cd pokedex`
+    `npm install`
 
-    - `cd pokedex`
-
-    - `npm install`
-    
 
 ## Usage
 
-To run the web page locally run:
-    `npm start`
+To run the web page locally run: `npm start`
 
 This will run the app locally at: [http://localhost:3000](htpp://localhost:3000).
 
