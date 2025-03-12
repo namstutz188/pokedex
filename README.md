@@ -12,9 +12,9 @@ The web app is hosted at: [https://pokelite.netlify.app/](https://pokelite.netli
 
 From the repository you wish to clone the pokedex repo into and install dependencies run:
 
-    `git clone https://github.com/namstutz188/pokedex`
-    `cd pokedex`
-    `npm install`
+    git clone https://github.com/namstutz188/pokedex
+    cd pokedex
+    npm install
 
 
 ## Usage
